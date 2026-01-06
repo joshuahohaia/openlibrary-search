@@ -14,17 +14,19 @@ export const Title = styled.span`
   ${truncate()}
 `
 
-export const AmazonButton = styled.a`
+export const AmazonButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
   width: 24px;
   height: 24px;
   border-radius: ${theme.radii.sm};
+  border: none;
   background: transparent;
   color: ${theme.colors.offwhite.vivid};
   flex-shrink: 0;
   opacity: 0;
+  cursor: pointer;
   transition: opacity ${theme.transitions.fast}, color ${theme.transitions.fast};
 
   &:hover {
@@ -114,9 +116,3 @@ export const Year = styled.span`
   ${truncate()}
 `
 
-export const ChevronIcon = styled.svg`
-  width: 16px;
-  height: 16px;
-  color: ${theme.colors.offwhite.vivid};
-  flex-shrink: 0;
-`

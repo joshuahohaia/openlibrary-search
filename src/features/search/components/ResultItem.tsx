@@ -34,8 +34,10 @@ export const ResultItem = memo(function ResultItem({ book, isActive, onMouseEnte
   }, [navigate, book])
 
   const handleAmazonClick = useCallback((e: React.MouseEvent) => {
+    e.preventDefault()
     e.stopPropagation()
-  }, [])
+    window.open(amazonUrl, '_blank', 'noopener,noreferrer')
+  }, [amazonUrl])
 
   return (
     <Wrapper
@@ -63,9 +65,7 @@ export const ResultItem = memo(function ResultItem({ book, isActive, onMouseEnte
         {book.year && <Year>{book.year}</Year>}
       </Info>
       <AmazonButton
-        href={amazonUrl}
-        target="_blank"
-        rel="noopener noreferrer"
+        type="button"
         onClick={handleAmazonClick}
         aria-label={`Find "${book.title}" on Amazon`}
         title="Find on Amazon"
