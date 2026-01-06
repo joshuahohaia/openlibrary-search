@@ -2,20 +2,27 @@ import { describe, it, expect } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { Provider } from 'react-redux'
+import { MemoryRouter } from 'react-router-dom'
 import { configureStore } from '@reduxjs/toolkit'
 import { searchApi } from '../api/searchApi'
+import searchReducer from '../searchSlice'
 import { SearchWidget } from '../components/SearchWidget'
 
 function renderWithStore(component: React.ReactNode) {
   const store = configureStore({
     reducer: {
       [searchApi.reducerPath]: searchApi.reducer,
+      search: searchReducer,
     },
     middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware().concat(searchApi.middleware),
   })
 
-  return render(<Provider store={store}>{component}</Provider>)
+  return render(
+    <Provider store={store}>
+      <MemoryRouter>{component}</MemoryRouter>
+    </Provider>
+  )
 }
 
 describe('SearchWidget', () => {
