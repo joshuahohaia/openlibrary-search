@@ -33,6 +33,6 @@ export const Kbd = styled.kbd`
   font-size: 0.75rem;
   background: ${theme.colors.offwhite.calm};
   border-radius: ${theme.radii.xs};
-  border: 1px solid ${theme.colors.offwhite.vivid}; /* Leaving this as it mimics a key */
+  border: 1px solid ${theme.colors.offwhite.vivid};
   color: ${theme.colors.evergreen.veryDark};
 `;

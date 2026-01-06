@@ -12,8 +12,8 @@ const GlobalStyles = createGlobalStyle`
     --color-primary: ${theme.colors.evergreen.dark};
     --color-primary-light: ${theme.colors.evergreen.light};
     --color-primary-vivid: ${theme.colors.evergreen.vivid};
-    --color-text: ${theme.colors.evergreen.veryDark};
-    --color-text-muted: ${theme.colors.offwhite.vivid};
+    --color-text: ${theme.colors.neutral.dark};
+    --color-text-muted: ${theme.colors.neutral.light};
     --color-background: ${theme.colors.offwhite.light};
     --color-surface: ${theme.colors.surface};
     --font-display: ${theme.fonts.display};

@@ -11,13 +11,13 @@ export const theme = {
     },
     offwhite: {
       light: '#FDF8F2',
-      calm: '#EAE0D7',
-      vivid: '#9A9288',
+      calm: '#F2E8DC',
+      vivid: '#8C857D',
     },
     neutral: {
-      dark: '#32373c',
-      medium: '#545a60',
-      light: '#6c757d',
+      dark: '#2C2926',
+      medium: '#5C5751',
+      light: '#958F89',
     },
     surface: '#FFFFFF',
     fade: '#E3E3E3'
