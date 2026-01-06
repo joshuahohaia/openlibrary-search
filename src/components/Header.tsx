@@ -1,3 +1,4 @@
+import { SearchWidget } from '@features/search'
 import { Wrapper, Logo, SearchContainer } from './Header.styles'
 
 export function Header() {
@@ -7,7 +8,7 @@ export function Header() {
         Bookfinder
       </Logo>
       <SearchContainer>
-        {/* SearchWidget will be added here */}
+        <SearchWidget />
       </SearchContainer>
     </Wrapper>
   )

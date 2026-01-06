@@ -2,7 +2,7 @@ import { useLocation, useNavigate, Navigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import type { BookResult } from '@/types'
 import { API } from '@/constants'
-// import { useGetBookDetailsQuery } from '@features/search/api/searchApi'
+import { useGetBookDetailsQuery } from '@features/search/api/searchApi'
 import { Skeleton } from '@/components/common'
 import {
   Wrapper,
@@ -66,11 +66,9 @@ export function BookDetail() {
     setImageLoaded(false)
   }, [book?.key])
 
-  // const { data: details, isLoading: isLoadingDetails } = useGetBookDetailsQuery(book?.key ?? '', {
-  //   skip: !book?.key
-  // })
-  const details = undefined
-  const isLoadingDetails = false
+  const { data: details, isLoading: isLoadingDetails } = useGetBookDetailsQuery(book?.key ?? '', {
+    skip: !book?.key
+  })
 
   if (!book) {
     return <Navigate to="/" replace />
