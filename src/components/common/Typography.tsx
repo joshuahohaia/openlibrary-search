@@ -10,20 +10,20 @@ export const SectionTitle = styled.h2`
 
 export const SubText = styled.p`
   font-size: 1.0625rem;
-  color: ${theme.colors.offwhite.vivid};
+  color: ${theme.colors.neutral.medium};
   line-height: 1.6;
   margin: 0;
 `
 
 export const MutedText = styled.span`
   font-size: 0.875rem;
-  color: ${theme.colors.offwhite.vivid};
+  color: ${theme.colors.neutral.light};
 `
 
 export const Label = styled.span`
   font-size: 0.75rem;
   font-weight: 600;
-  color: ${theme.colors.offwhite.vivid};
+  color: ${theme.colors.neutral.light};
   text-transform: uppercase;
   letter-spacing: 0.05em;
 `
