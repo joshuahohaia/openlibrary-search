@@ -49,6 +49,7 @@ export const StickyAside = styled.aside`
 
 export const BackButton = styled(TextButton)`
   min-height: 20px;
+  align-self: flex-start;
 
   svg {
     width: 16px;
@@ -173,7 +174,7 @@ export const MetaItem = styled.div`
 
 export const MetaLabel = styled.dt`
   font-size: 0.75rem;
-  color: ${theme.colors.offwhite.vivid};
+  color: ${theme.colors.evergreen.veryDark};
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-weight: 600;
@@ -215,7 +216,7 @@ export const TagGroup = styled.div`
 
 export const Tag = styled.span`
   font-size: 0.8125rem;
-  color: ${theme.colors.neutral.dark};
+  color: ${theme.colors.evergreen.dark};
   background: ${theme.colors.offwhite.calm};
   padding: 5px 12px;
   border-radius: ${theme.radii.pill};

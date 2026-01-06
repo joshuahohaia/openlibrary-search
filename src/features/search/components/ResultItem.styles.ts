@@ -14,6 +14,29 @@ export const Title = styled.span`
   ${truncate()}
 `
 
+export const AmazonButton = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: ${theme.radii.sm};
+  background: transparent;
+  color: ${theme.colors.offwhite.vivid};
+  flex-shrink: 0;
+  opacity: 0;
+  transition: opacity ${theme.transitions.fast}, color ${theme.transitions.fast};
+
+  &:hover {
+    color: ${theme.colors.evergreen.dark};
+  }
+
+  svg {
+    width: 14px;
+    height: 14px;
+  }
+`
+
 export const Wrapper = styled.a<{ $isActive: boolean }>`
   display: flex;
   align-items: center;
@@ -21,7 +44,7 @@ export const Wrapper = styled.a<{ $isActive: boolean }>`
   padding: ${theme.spacing.sm} ${theme.spacing.md};
   text-decoration: none;
   color: inherit;
-  background-color: ${({ $isActive }) => 
+  background-color: ${({ $isActive }) =>
     $isActive ? theme.colors.evergreen.light : 'transparent'};
 
   &:hover {
@@ -31,6 +54,10 @@ export const Wrapper = styled.a<{ $isActive: boolean }>`
 
   &:hover ${Title} {
     text-decoration: underline;
+  }
+
+  &:hover ${AmazonButton} {
+    opacity: 1;
   }
 `
 

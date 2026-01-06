@@ -1,6 +1,6 @@
 import { useRef, useEffect } from 'react'
 import styled from 'styled-components'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { useSearchBooksQuery } from '../api/searchApi'
 import {
   setQuery,
@@ -16,7 +16,7 @@ import {
 } from '../searchSlice'
 import { useAppDispatch, useAppSelector } from '@app/hooks'
 import { useDebounce, useClickOutside, useHotkey } from '@/hooks'
-import { SEARCH, KEYBOARD, API } from '@/constants'
+import { SEARCH, KEYBOARD } from '@/constants'
 import { SearchInput } from './SearchInput'
 import { ResultsDropdown } from './ResultsDropdown'
 
@@ -34,6 +34,7 @@ export function SearchWidget() {
   const wrapperRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
   const location = useLocation()
+  const navigate = useNavigate()
 
   useEffect(() => {
     dispatch(resetSearch())
@@ -86,8 +87,7 @@ export function SearchWidget() {
       case KEYBOARD.ENTER:
         if (activeIndex >= 0 && results[activeIndex]) {
           const book = results[activeIndex]
-          const searchTerm = book.isbn ?? `${book.title} ${book.author}`
-          window.open(`${API.AMAZON_SEARCH_URL}?k=${encodeURIComponent(searchTerm)}`, '_blank')
+          navigate(`/book/${encodeURIComponent(book.id)}`, { state: { book } })
         }
         break
     }
